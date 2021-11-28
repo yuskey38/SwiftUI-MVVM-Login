@@ -38,6 +38,16 @@
                ReferencedContainer = "container:SwiftUI-MVVM-Login.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "704669EC2753569F00E0B170"
+               BuildableName = "SwiftUI-MVVM-LoginUITests.xctest"
+               BlueprintName = "SwiftUI-MVVM-LoginUITests"
+               ReferencedContainer = "container:SwiftUI-MVVM-Login.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

@@ -21,7 +21,8 @@ struct LoginView: View {
             passwordSecureField
             loginButton
         }
-        .alert("ログイン成功", isPresented: $viewModel.isLoginCompleted, actions: {})
+        .alert("ログイン成功", isPresented: $viewModel.isLoginCompleted, actions: {}
+        )
     }
 
     var emailTextField: some View {
@@ -29,6 +30,7 @@ struct LoginView: View {
             .textFieldStyle(.roundedBorder)
             .autocapitalization(.none)
             .padding()
+            .accessibility(identifier: "loginEmailTextField")
     }
 
     var passwordSecureField: some View {
@@ -36,6 +38,7 @@ struct LoginView: View {
             .textFieldStyle(.roundedBorder)
             .autocapitalization(.none)
             .padding()
+            .accessibility(identifier: "loginPasswordSecureField")
     }
 
     var loginButton: some View {
@@ -49,12 +52,14 @@ struct LoginView: View {
                 .padding()
                 .disabled(!viewModel.isLoginEnabled)
                 .opacity(viewModel.isLoginEnabled ? 1: 0.5)
+                .accessibility(identifier: "loginButton")
         }
     }
 
     var invalidMessage: some View {
         Text(viewModel.invalidMessage)
             .foregroundColor(.red)
+            .accessibility(identifier: "loginInvalidMessage")
     }
 }
 
