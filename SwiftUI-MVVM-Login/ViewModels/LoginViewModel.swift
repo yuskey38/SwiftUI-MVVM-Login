@@ -40,7 +40,6 @@ final class LoginViewModel: ObservableObject {
         cancellables.formUnion([
             isLoginEnabled.assign(to: \.isLoginEnabled, on: self),
             invalidMessage.assign(to: \.invalidMessage, on: self),
-
             isLoginCompleted.assign(to: \.isLoginCompleted, on: self)
         ])
     }

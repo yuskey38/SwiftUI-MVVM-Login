@@ -14,7 +14,19 @@
 		704669CF2752876B00E0B170 /* LoginValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704669CE2752876B00E0B170 /* LoginValidator.swift */; };
 		704669D127528B3F00E0B170 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704669D027528B3F00E0B170 /* LoginViewModel.swift */; };
 		704669D32753152E00E0B170 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704669D22753152E00E0B170 /* LoginView.swift */; };
+		704669E42753517000E0B170 /* LoginValidatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704669E32753517000E0B170 /* LoginValidatorTests.swift */; };
+		704669E6275352DD00E0B170 /* LoginViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704669E5275352DD00E0B170 /* LoginViewModelTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		704669DC2753512C00E0B170 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 704669B22752861E00E0B170 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 704669B92752861E00E0B170;
+			remoteInfo = "SwiftUI-MVVM-Login";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		704669BA2752861E00E0B170 /* SwiftUI-MVVM-Login.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SwiftUI-MVVM-Login.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -25,10 +37,20 @@
 		704669CE2752876B00E0B170 /* LoginValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginValidator.swift; sourceTree = "<group>"; };
 		704669D027528B3F00E0B170 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		704669D22753152E00E0B170 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		704669D82753512C00E0B170 /* SwiftUI-MVVM-LoginTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SwiftUI-MVVM-LoginTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		704669E32753517000E0B170 /* LoginValidatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginValidatorTests.swift; sourceTree = "<group>"; };
+		704669E5275352DD00E0B170 /* LoginViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModelTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		704669B72752861E00E0B170 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		704669D52753512C00E0B170 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -42,6 +64,7 @@
 			isa = PBXGroup;
 			children = (
 				704669BC2752861E00E0B170 /* SwiftUI-MVVM-Login */,
+				704669D92753512C00E0B170 /* SwiftUI-MVVM-LoginTests */,
 				704669BB2752861E00E0B170 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -50,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				704669BA2752861E00E0B170 /* SwiftUI-MVVM-Login.app */,
+				704669D82753512C00E0B170 /* SwiftUI-MVVM-LoginTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -100,6 +124,31 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		704669D92753512C00E0B170 /* SwiftUI-MVVM-LoginTests */ = {
+			isa = PBXGroup;
+			children = (
+				704669E12753514500E0B170 /* Models */,
+				704669E22753514E00E0B170 /* ViewModels */,
+			);
+			path = "SwiftUI-MVVM-LoginTests";
+			sourceTree = "<group>";
+		};
+		704669E12753514500E0B170 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				704669E32753517000E0B170 /* LoginValidatorTests.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		704669E22753514E00E0B170 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				704669E5275352DD00E0B170 /* LoginViewModelTests.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -120,6 +169,24 @@
 			productReference = 704669BA2752861E00E0B170 /* SwiftUI-MVVM-Login.app */;
 			productType = "com.apple.product-type.application";
 		};
+		704669D72753512C00E0B170 /* SwiftUI-MVVM-LoginTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 704669E02753512C00E0B170 /* Build configuration list for PBXNativeTarget "SwiftUI-MVVM-LoginTests" */;
+			buildPhases = (
+				704669D42753512C00E0B170 /* Sources */,
+				704669D52753512C00E0B170 /* Frameworks */,
+				704669D62753512C00E0B170 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				704669DD2753512C00E0B170 /* PBXTargetDependency */,
+			);
+			name = "SwiftUI-MVVM-LoginTests";
+			productName = "SwiftUI-MVVM-LoginTests";
+			productReference = 704669D82753512C00E0B170 /* SwiftUI-MVVM-LoginTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -132,6 +199,10 @@
 				TargetAttributes = {
 					704669B92752861E00E0B170 = {
 						CreatedOnToolsVersion = 13.1;
+					};
+					704669D72753512C00E0B170 = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = 704669B92752861E00E0B170;
 					};
 				};
 			};
@@ -149,6 +220,7 @@
 			projectRoot = "";
 			targets = (
 				704669B92752861E00E0B170 /* SwiftUI-MVVM-Login */,
+				704669D72753512C00E0B170 /* SwiftUI-MVVM-LoginTests */,
 			);
 		};
 /* End PBXProject section */
@@ -160,6 +232,13 @@
 			files = (
 				704669C52752862000E0B170 /* Preview Assets.xcassets in Resources */,
 				704669C22752862000E0B170 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		704669D62753512C00E0B170 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -178,7 +257,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		704669D42753512C00E0B170 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				704669E6275352DD00E0B170 /* LoginViewModelTests.swift in Sources */,
+				704669E42753517000E0B170 /* LoginValidatorTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		704669DD2753512C00E0B170 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 704669B92752861E00E0B170 /* SwiftUI-MVVM-Login */;
+			targetProxy = 704669DC2753512C00E0B170 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		704669C62752862000E0B170 /* Debug */ = {
@@ -355,6 +451,52 @@
 			};
 			name = Release;
 		};
+		704669DE2753512C00E0B170 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4QA8P2NACJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "yuskey.SwiftUI-MVVM-LoginTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftUI-MVVM-Login.app/SwiftUI-MVVM-Login";
+			};
+			name = Debug;
+		};
+		704669DF2753512C00E0B170 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4QA8P2NACJ;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "yuskey.SwiftUI-MVVM-LoginTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SwiftUI-MVVM-Login.app/SwiftUI-MVVM-Login";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -372,6 +514,15 @@
 			buildConfigurations = (
 				704669C92752862000E0B170 /* Debug */,
 				704669CA2752862000E0B170 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		704669E02753512C00E0B170 /* Build configuration list for PBXNativeTarget "SwiftUI-MVVM-LoginTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				704669DE2753512C00E0B170 /* Debug */,
+				704669DF2753512C00E0B170 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
