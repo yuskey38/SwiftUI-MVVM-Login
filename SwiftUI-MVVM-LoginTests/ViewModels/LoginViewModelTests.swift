@@ -22,7 +22,7 @@ class LoginViewModelTests: XCTestCase {
     }
 
     func testEmailInvalidMessage() throws {
-        let expected = LoginValidateError.isEmailEmpty.localizedDescription
+        let expected = LoginValidateError.emailEmpty.localizedDescription
 
         viewModel.email = ""
         viewModel.password = "password"
@@ -31,7 +31,7 @@ class LoginViewModelTests: XCTestCase {
     }
 
     func testPasswordInvalidMessage() throws {
-        let expected = LoginValidateError.isPasswordEmpty.localizedDescription
+        let expected = LoginValidateError.passwordEmpty.localizedDescription
 
         viewModel.email = "email"
         viewModel.password = ""

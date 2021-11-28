@@ -25,7 +25,7 @@ class LoginValidatorTests: XCTestCase {
     func testValidateForEmailEmpty() throws {
         let email = ""
         let password = ""
-        let expected = LoginValidateError.isEmailEmpty.localizedDescription
+        let expected = LoginValidateError.emailEmpty.localizedDescription
 
         let actual = model.validate(email: email, password: password)
 
@@ -35,7 +35,7 @@ class LoginValidatorTests: XCTestCase {
     func testValidateForPasswordEmpty() throws {
         let email = "email"
         let password = ""
-        let expected = LoginValidateError.isPasswordEmpty.localizedDescription
+        let expected = LoginValidateError.passwordEmpty.localizedDescription
 
         let actual = model.validate(email: email, password: password)
 

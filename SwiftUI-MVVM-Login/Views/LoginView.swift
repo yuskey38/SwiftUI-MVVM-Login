@@ -21,8 +21,7 @@ struct LoginView: View {
             passwordSecureField
             loginButton
         }
-        .alert("ログイン成功", isPresented: $viewModel.isLoginCompleted, actions: {}
-        )
+        .alert("ログイン成功", isPresented: $viewModel.isLoginCompleted) {}
     }
 
     var emailTextField: some View {

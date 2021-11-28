@@ -8,13 +8,13 @@
 import Foundation
 
 enum LoginValidateError: Error {
-    case isEmailEmpty
-    case isPasswordEmpty
+    case emailEmpty
+    case passwordEmpty
 
     var localizedDescription: String {
         switch self {
-            case .isEmailEmpty: return "isEmailEmpty"
-            case .isPasswordEmpty: return "isPasswordEmpty"
+            case .emailEmpty: return "emailEmpty"
+            case .passwordEmpty: return "passwordEmpty"
         }
     }
 }
@@ -23,14 +23,14 @@ protocol ILoginValidator {
     func validate(email: String, password: String) -> String
 }
 
-final class LoginValidator {
+final class LoginValidator: ILoginValidator {
     func validate(email: String, password: String) -> String {
         if email.isEmpty {
-            return LoginValidateError.isEmailEmpty.localizedDescription
+            return LoginValidateError.emailEmpty.localizedDescription
         }
 
         if password.isEmpty {
-            return LoginValidateError.isPasswordEmpty.localizedDescription
+            return LoginValidateError.passwordEmpty.localizedDescription
         }
 
         return ""
