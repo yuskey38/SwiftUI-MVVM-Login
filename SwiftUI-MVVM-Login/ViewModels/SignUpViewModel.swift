@@ -31,12 +31,13 @@ final class SignUpViewModel: ObservableObject {
             .dropFirst()
             .map { loginValidator.validate(email: $0, password: $1) }
 
-        let authenticate = didTapSignUpButton
+        let signUp = didTapSignUpButton
             .sink(receiveValue: { [weak self] in
-                guard let self = self else { return }
-                Auth.auth().createUser(withEmail: self.email, password: self.password) { authResult, error in
+                guard let email = self?.email, let password = self?.password else { return }
+                Auth.auth().createUser(withEmail: email, password: password) { [weak self] authResult, error in
+                    guard let strongSelf = self else { return }
                     if let error = error {
-                        self.isShowError = (true, error.localizedDescription)
+                        strongSelf.isShowError = (true, error.localizedDescription)
                     }
                 }
             })
@@ -45,7 +46,7 @@ final class SignUpViewModel: ObservableObject {
         cancellables.formUnion([
             isSignUpEnabled.assign(to: \.isSignUpEnabled, on: self),
             invalidMessage.assign(to: \.invalidMessage, on: self),
-            authenticate
+            signUp
         ])
     }
 }

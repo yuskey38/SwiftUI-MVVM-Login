@@ -24,7 +24,13 @@ struct LoginView: View {
                 signUpButton
             }
         }
-        .alert("ログイン成功", isPresented: $viewModel.isLoginCompleted) {}
+        .alert(viewModel.isShowError.message,
+               isPresented: $viewModel.isShowError.isShow,
+               actions: {
+            Button("OK", role: .none, action: {
+                viewModel.isShowError = (false, "")
+            })
+        })
     }
 
     var emailTextField: some View {

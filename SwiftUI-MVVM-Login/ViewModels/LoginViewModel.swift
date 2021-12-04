@@ -7,13 +7,14 @@
 
 import Foundation
 import Combine
+import FirebaseAuth
 
 final class LoginViewModel: ObservableObject {
     // binding: ViewModelでもViewでも値を変えられるもの
     @Published var email: String = ""
     @Published var password: String = ""
 
-    @Published var isLoginCompleted: Bool = false
+    @Published var isShowError: (isShow: Bool, message: String) = (false, "")
 
     // Input: Viewで発生するイベントをViewModelで検知するためのもの
     let didTapLoginButton = PassthroughSubject<Void, Never>()
@@ -31,17 +32,21 @@ final class LoginViewModel: ObservableObject {
             .dropFirst()
             .map { loginValidator.validate(email: $0, password: $1) }
 
-
-        let isLoginCompleted = didTapLoginButton
-            .flatMap {
-                
-                Just(true)
-            }
+        let authenticate = didTapLoginButton
+            .sink(receiveValue: { [weak self] in
+                guard let email = self?.email, let password = self?.password else { return }
+                Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
+                    guard let strongSelf = self else { return }
+                    if let error = error {
+                        strongSelf.isShowError = (true, error.localizedDescription)
+                    }
+                }
+            })
 
         cancellables.formUnion([
             isLoginEnabled.assign(to: \.isLoginEnabled, on: self),
             invalidMessage.assign(to: \.invalidMessage, on: self),
-            isLoginCompleted.assign(to: \.isLoginCompleted, on: self)
+            authenticate
         ])
     }
 }
