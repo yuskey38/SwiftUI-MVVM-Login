@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct SwiftUI_MVVM_LoginApp: App {
+    @UIApplicationDelegateAdaptor (AppDelegate.self) var appDelegate
+
     var body: some Scene {
         WindowGroup {
-            LoginView(viewModel: LoginViewModel(loginValidator: LoginValidator()))
+            ContentView(viewModel: ContentViewModel())
         }
     }
 }
