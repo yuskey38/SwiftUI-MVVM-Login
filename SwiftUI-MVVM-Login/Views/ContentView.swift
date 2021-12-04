@@ -20,13 +20,16 @@ struct ContentView: View {
                 Text("ログアウト")
             }
         } else {
-            LoginView(viewModel: LoginViewModel(loginValidator: LoginValidator()))
+            LoginView(viewModel: LoginViewModel(
+                loginValidator: LoginValidator(),
+                firebaseAuthService: FirebaseAuthService.shared
+            ))
         }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(viewModel: ContentViewModel())
+        ContentView(viewModel: ContentViewModel(firebaseAuthService: FirebaseAuthService.shared))
     }
 }

@@ -6,14 +6,17 @@
 //
 
 import SwiftUI
+import Firebase
 
 @main
 struct SwiftUI_MVVM_LoginApp: App {
-    @UIApplicationDelegateAdaptor (AppDelegate.self) var appDelegate
+    init() {
+        FirebaseApp.configure()
+    }
 
     var body: some Scene {
         WindowGroup {
-            ContentView(viewModel: ContentViewModel())
+            ContentView(viewModel: ContentViewModel(firebaseAuthService: FirebaseAuthService.shared))
         }
     }
 }
