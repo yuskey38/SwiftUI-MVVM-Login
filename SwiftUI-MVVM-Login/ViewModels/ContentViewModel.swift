@@ -15,6 +15,9 @@ final class ContentViewModel: ObservableObject {
     // Input: Viewで発生するイベントをViewModelで検知するためのもの
     let didTapLogoutButton = PassthroughSubject<Void, Never>()
 
+    // cancellable
+    private var cancellables = Set<AnyCancellable>()
+
     private var handler: AuthStateDidChangeListenerHandle?
 
     init() {
@@ -28,7 +31,12 @@ final class ContentViewModel: ObservableObject {
             }
         }
 
-        
+        didTapLogoutButton
+            .sink(receiveValue: {
+                do { try Auth.auth().signOut() }
+                catch { }
+            })
+            .store(in: &cancellables)
     }
 
     deinit {

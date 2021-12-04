@@ -15,11 +15,14 @@ struct LoginView: View {
     }
 
     var body: some View {
-        VStack {
-            invalidMessage
-            emailTextField
-            passwordSecureField
-            loginButton
+        NavigationView {
+            VStack {
+                invalidMessage
+                emailTextField
+                passwordSecureField
+                loginButton
+                signUpButton
+            }
         }
         .alert("ログイン成功", isPresented: $viewModel.isLoginCompleted) {}
     }
@@ -59,6 +62,19 @@ struct LoginView: View {
         Text(viewModel.invalidMessage)
             .foregroundColor(.red)
             .accessibility(identifier: "loginInvalidMessage")
+    }
+
+    var signUpButton: some View {
+        NavigationLink(destination: SignUpView(viewModel: SignUpViewModel(loginValidator: LoginValidator()))) {
+            Text("新規登録")
+                .frame(maxWidth: .infinity)
+                .padding()
+                .foregroundColor(.white)
+                .background(Color(.orange))
+                .cornerRadius(24)
+                .padding()
+                .accessibility(identifier: "signUpButton")
+        }
     }
 }
 

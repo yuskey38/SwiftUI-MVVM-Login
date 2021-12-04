@@ -21,6 +21,8 @@
 		704F01042759144600296A91 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 704F01032759144600296A91 /* GoogleService-Info.plist */; };
 		704F010627591E9500296A91 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704F010527591E9500296A91 /* AppDelegate.swift */; };
 		704F010827591ED600296A91 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704F010727591ED600296A91 /* ContentViewModel.swift */; };
+		704F010A275B313000296A91 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704F0109275B313000296A91 /* SignUpView.swift */; };
+		704F010C275B316000296A91 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 704F010B275B316000296A91 /* SignUpViewModel.swift */; };
 		93FE30EDA6473E277FDE8FC5 /* Pods_SwiftUI_MVVM_Login.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E41A6DC5DC5E01A8B2613AB /* Pods_SwiftUI_MVVM_Login.framework */; };
 		D344AC257B12BCA57573A189 /* Pods_SwiftUI_MVVM_LoginTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECF5E5C1BA1FB057EF714540 /* Pods_SwiftUI_MVVM_LoginTests.framework */; };
 /* End PBXBuildFile section */
@@ -63,6 +65,8 @@
 		704F01032759144600296A91 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		704F010527591E9500296A91 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		704F010727591ED600296A91 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
+		704F0109275B313000296A91 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		704F010B275B316000296A91 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		7E41A6DC5DC5E01A8B2613AB /* Pods_SwiftUI_MVVM_Login.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftUI_MVVM_Login.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFB16B51F91C92D689DE02E8 /* Pods-SwiftUI-MVVM-Login-SwiftUI-MVVM-LoginUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftUI-MVVM-Login-SwiftUI-MVVM-LoginUITests.debug.xcconfig"; path = "Target Support Files/Pods-SwiftUI-MVVM-Login-SwiftUI-MVVM-LoginUITests/Pods-SwiftUI-MVVM-Login-SwiftUI-MVVM-LoginUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		E27D760A6DF6C6929769EB94 /* Pods-SwiftUI-MVVM-Login-SwiftUI-MVVM-LoginUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwiftUI-MVVM-Login-SwiftUI-MVVM-LoginUITests.release.xcconfig"; path = "Target Support Files/Pods-SwiftUI-MVVM-Login-SwiftUI-MVVM-LoginUITests/Pods-SwiftUI-MVVM-Login-SwiftUI-MVVM-LoginUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -156,6 +160,7 @@
 			children = (
 				704669BF2752861E00E0B170 /* ContentView.swift */,
 				704669D22753152E00E0B170 /* LoginView.swift */,
+				704F0109275B313000296A91 /* SignUpView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -165,6 +170,7 @@
 			children = (
 				704F010727591ED600296A91 /* ContentViewModel.swift */,
 				704669D027528B3F00E0B170 /* LoginViewModel.swift */,
+				704F010B275B316000296A91 /* SignUpViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -476,6 +482,8 @@
 				704669D127528B3F00E0B170 /* LoginViewModel.swift in Sources */,
 				704669CF2752876B00E0B170 /* LoginValidator.swift in Sources */,
 				704F010827591ED600296A91 /* ContentViewModel.swift in Sources */,
+				704F010C275B316000296A91 /* SignUpViewModel.swift in Sources */,
+				704F010A275B313000296A91 /* SignUpView.swift in Sources */,
 				704669C02752861E00E0B170 /* ContentView.swift in Sources */,
 				704669D32753152E00E0B170 /* LoginView.swift in Sources */,
 				704669BE2752861E00E0B170 /* SwiftUI_MVVM_LoginApp.swift in Sources */,

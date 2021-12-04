@@ -34,6 +34,7 @@ final class LoginViewModel: ObservableObject {
 
         let isLoginCompleted = didTapLoginButton
             .flatMap {
+                
                 Just(true)
             }
 
