@@ -16,7 +16,9 @@ struct SwiftUI_MVVM_LoginApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView(viewModel: ContentViewModel(firebaseAuthService: FirebaseAuthService.shared))
+            NavigationView {
+                ContentView(viewModel: ContentViewModel(firebaseAuthService: FirebaseAuthService.shared))
+            }
         }
     }
 }

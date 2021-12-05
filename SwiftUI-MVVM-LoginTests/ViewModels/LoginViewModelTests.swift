@@ -10,7 +10,7 @@ import XCTest
 
 class LoginViewModelTests: XCTestCase {
 
-    private let viewModel = LoginViewModel(loginValidator: LoginValidator())
+    private let viewModel = LoginViewModel(loginValidator: LoginValidator(), firebaseAuthService: FirebaseAuthService.shared)
 
     func testNoInvalidMessage() throws {
         let expected = ""

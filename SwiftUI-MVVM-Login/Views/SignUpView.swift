@@ -30,14 +30,15 @@ struct SignUpView: View {
                 .padding()
                 .accessibility(identifier: "signUpPasswordSecureField")
             Button(action: { viewModel.didTapSignUpButton.send() }) {
-                Text("新規登録")
-                    .frame(maxWidth: .infinity)
+                Image(systemName: "hand.thumbsup.fill")
+                    .resizable()
+                    .frame(width: 30, height: 30, alignment: .center)
                     .padding()
                     .foregroundColor(.white)
                     .background(Color(.orange))
                     .cornerRadius(24)
                     .padding()
-                    .opacity(viewModel.isSignUpEnabled ? 1: 0.5)
+                    .opacity(viewModel.isSignUpEnabled ? 1 : 0.5)
                     .accessibility(identifier: "signUpButton")
             }.disabled(!viewModel.isSignUpEnabled)
         }
@@ -48,7 +49,6 @@ struct SignUpView: View {
                 viewModel.isShowError = (false, "")
             })
         })
-
     }
 }
 

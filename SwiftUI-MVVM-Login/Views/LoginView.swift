@@ -15,39 +15,40 @@ struct LoginView: View {
     }
 
     var body: some View {
-        NavigationView {
-            VStack {
-                Text(viewModel.invalidMessage)
-                    .foregroundColor(.red)
-                    .accessibility(identifier: "loginInvalidMessage")
-                TextField("Eメール", text: $viewModel.email)
-                    .textFieldStyle(.roundedBorder)
-                    .autocapitalization(.none)
-                    .padding()
-                    .accessibility(identifier: "loginEmailTextField")
-                SecureField("パスワード", text: $viewModel.password)
-                    .textFieldStyle(.roundedBorder)
-                    .autocapitalization(.none)
-                    .padding()
-                    .accessibility(identifier: "loginPasswordSecureField")
+        VStack {
+            Text(viewModel.invalidMessage)
+                .foregroundColor(.red)
+                .accessibility(identifier: "loginInvalidMessage")
+            TextField("Eメール", text: $viewModel.email)
+                .textFieldStyle(.roundedBorder)
+                .autocapitalization(.none)
+                .padding()
+                .accessibility(identifier: "loginEmailTextField")
+            SecureField("パスワード", text: $viewModel.password)
+                .textFieldStyle(.roundedBorder)
+                .autocapitalization(.none)
+                .padding()
+                .accessibility(identifier: "loginPasswordSecureField")
+
+            HStack {
                 Button(action: { viewModel.didTapLoginButton.send() }) {
-                    Text("ログイン")
-                        .frame(maxWidth: .infinity)
+                    Image(systemName: "hand.thumbsup.fill")
+                        .resizable()
+                        .frame(width: 30, height: 30, alignment: .center)
                         .padding()
                         .foregroundColor(.white)
                         .background(Color(.orange))
                         .cornerRadius(24)
                         .padding()
-                        .opacity(viewModel.isLoginEnabled ? 1: 0.5)
+                        .opacity(viewModel.isLoginEnabled ? 1 : 0.5)
                         .accessibility(identifier: "loginButton")
                 }.disabled(!viewModel.isLoginEnabled)
 
-                NavigationLink(destination: SignUpView(viewModel: SignUpViewModel(
-                    loginValidator: LoginValidator(),
-                    firebaseAuthService: FirebaseAuthService.shared
-                ))) {
-                    Text("新規登録")
-                        .frame(maxWidth: .infinity)
+
+                NavigationLink(destination: signUpView) {
+                    Image(systemName: "star.fill")
+                        .resizable()
+                        .frame(width: 30, height: 30, alignment: .center)
                         .padding()
                         .foregroundColor(.white)
                         .background(Color(.orange))
@@ -55,16 +56,23 @@ struct LoginView: View {
                         .padding()
                         .accessibility(identifier: "toSignUpButton")
                 }
-            }.alert(viewModel.isShowError.message,
-                    isPresented: $viewModel.isShowError.isShow,
-                    actions: {
-                Button("OK", role: .none, action: {
-                    viewModel.isShowError = (false, "")
-                })
+            }
+        }.alert(viewModel.isShowError.message,
+                isPresented: $viewModel.isShowError.isShow,
+                actions: { [weak viewModel] in
+            Button("OK", role: .none, action: {
+                viewModel?.isShowError = (false, "")
             })
-        }
+        })
     }
 }
+
+    var signUpView: some View {
+        SignUpView(viewModel: SignUpViewModel(
+            loginValidator: LoginValidator(),
+            firebaseAuthService: FirebaseAuthService.shared
+        ))
+    }
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
