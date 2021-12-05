@@ -12,7 +12,7 @@ final class LoginViewModel: ObservableObject {
     @Published var email: String = ""
     @Published var password: String = ""
     @Published var isShowError: (isShow: Bool, message: String) = (false, "")
-    
+
     // Input: Viewで発生するイベントをViewModelで検知するためのもの
     let didTapLoginButton = PassthroughSubject<Void, Never>()
     

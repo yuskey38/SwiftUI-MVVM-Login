@@ -18,7 +18,7 @@ final class SignUpViewModel: ObservableObject {
 
     // output: ViewModelでなにかしらの処理をした結果をViewに通知するためのもの
     @Published private(set) var invalidMessage: String = ""
-    @Published private(set) var isSignUpEnabled: Bool = true
+    @Published private(set) var isSignUpEnabled: Bool = false
 
     // cancellable
     private var cancellables = Set<AnyCancellable>()

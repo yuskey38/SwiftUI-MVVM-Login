@@ -17,7 +17,7 @@ struct ContentView: View {
     var body: some View {
         if viewModel.isLogin {
             Button(action: { viewModel.didTapLogoutButton.send() }) {
-                Text("ログアウト")
+                Text("Logout")
             }
         } else {
             LoginView(viewModel: LoginViewModel(

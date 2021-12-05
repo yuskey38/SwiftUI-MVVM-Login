@@ -19,20 +19,19 @@ struct SignUpView: View {
             Text(viewModel.invalidMessage)
                 .foregroundColor(.red)
                 .accessibility(identifier: "signUpInvalidMessage")
-            TextField("Eメール", text: $viewModel.email)
+            TextField("E-mail", text: $viewModel.email)
                 .textFieldStyle(.roundedBorder)
                 .autocapitalization(.none)
                 .padding()
                 .accessibility(identifier: "signUpEmailTextField")
-            SecureField("パスワード", text: $viewModel.password)
+            SecureField("Password", text: $viewModel.password)
                 .textFieldStyle(.roundedBorder)
                 .autocapitalization(.none)
                 .padding()
                 .accessibility(identifier: "signUpPasswordSecureField")
             Button(action: { viewModel.didTapSignUpButton.send() }) {
-                Image(systemName: "hand.thumbsup.fill")
-                    .resizable()
-                    .frame(width: 30, height: 30, alignment: .center)
+                Text("SignUp")
+                    .frame(maxWidth: .infinity)
                     .padding()
                     .foregroundColor(.white)
                     .background(Color(.orange))
@@ -41,7 +40,9 @@ struct SignUpView: View {
                     .opacity(viewModel.isSignUpEnabled ? 1 : 0.5)
                     .accessibility(identifier: "signUpButton")
             }.disabled(!viewModel.isSignUpEnabled)
+            Spacer()
         }
+        .ignoresSafeArea(.keyboard, edges: .bottom)
         .alert(viewModel.isShowError.message,
                isPresented: $viewModel.isShowError.isShow,
                actions: {
